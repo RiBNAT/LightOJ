@@ -88,7 +88,7 @@ int main(){
         char s[1000005];
         scanf("%s",s);
         ll l=strlen(s);
-        //cout<<l<<endl;
+        
         ll i,j,k;
         ha[0]=0;
         ha2[l+1]=0;
@@ -105,13 +105,12 @@ int main(){
         ll n=l;
         ll ans=0;
         for(i=(ll)((l)/2 + 1); i<=l; i++){
-            //cout<<i<<" -- "<<endl;
+           
             ll x=ha2[i];
             ll len=n-i+1;
             if(i-1>=len){
                 ll y=(ha[i-1]-ha[i-1-len]+mod)%mod;
                 y=(y*modinverse(bg[i-len-1]))%mod;
-                //cout<<1<<" "<<i<<" "<<x<<" "<<y<<endl;
 
                 if(x==y){
                     ans+=i-1-len;
@@ -120,7 +119,7 @@ int main(){
             }
             ll z=(ha[i]-ha[i-len]+mod)%mod;
             z=(z*modinverse(bg[i-len]))%mod;
-            //cout<<2<<" "<<i<<" "<<x<<" "<<z<<endl;
+            
             if(x==z){
                 ans+=i-len;
                 break;
